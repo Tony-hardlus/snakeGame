@@ -1,22 +1,21 @@
-"""Snake, classic arcade game.
-
-Exercises
-
-1. How do you make the snake faster or slower?
-2. How can you make the snake go around the edges?
-3. How would you move the food?
-4. Change the snake to respond to mouse clicks.
-"""
+"""Snake, classic arcade game.""" #cambio: se quito los ejercicios originales.
 
 from random import randrange
 from turtle import *
-
+import random
 from freegames import square, vector
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+colorsSnake = ['blue','green','purple','black','yellow','pink']
+colorFood = ['sandybrown','skyblue','darkblue','turqouise','orange']
+colorOpSnake = random.randrange(0,5,1)
+colorOpFood = random.randrange(0,2,1)
+randcolorFood = colorFood[colorOpFood]
+randcolorSnake = colorsSnake[colorOpSnake]
 
+#Cambio: La comida y la serpiente cambian aleatoriamente de color despues de cada partida
 
 def change(x, y):
     """Change snake direction."""
